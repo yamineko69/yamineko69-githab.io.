@@ -1,0 +1,74 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<table>
+		<tr>
+		<td>
+	<input type="number" id ="n1">
+	<br/>
+	<input type="number" id ="n11">
+	</td>
+		<td>
+	<select id="znak">
+		<option value="/">/</option>>
+		<option value="*">*</option>>
+		<option value="+">+</option>>
+		<option value="-">-</option>>
+	</select>
+	</td>
+		<td>
+	<input type="number" id ="n2">
+	<br/>
+	<input type="number" id ="n22">	
+	</tr>
+	</table>
+	<button onclick="myfunc()">check</button>
+
+			<script type="text/javascript">
+		function myfunc(){
+			function delit(v1){
+		var re = [];
+		var i,j;
+q = Math.ceil((v1**(1/2)));
+for (i = 2; i<q; i++){
+		if (v1 % i == 0)  {
+			re.push(i);
+			if ((v1 / i) > q) {re.push(v1/i)
+			};
+		}
+		}
+	if (v1 % i == 0)  re.push(i);
+		re = re.sort(function(a,b){return a-b});
+		return re;
+}
+		var t1 = document.getElementById('n1').value;
+		var d1 = document.getElementById('n11').value;
+		var t2 = document.getElementById('n2').value;
+		var d2 = document.getElementById('n22').value;
+		var z = document.getElementById('znak').value;
+		var s = false;
+		if (z == '/')
+			{var top = t1*d2;
+			var down = d1*t2;}
+		if (z == '*')
+			{var top = t1*t2;
+			var down = d1*d2;}
+		if (z == '+')
+			{var top = t1*d2+t2*d1;
+			var down = d1*d2;}
+		if (z == '-')
+			{var top = t1*d2-t2*d1;
+			var down = d1*d2;}
+		while (s != true){
+			var tl = delit(Math.abs(top));
+			var dl = delit(Math.abs(down));
+			for (var i = tl.length - 1; i >= 0; i--) {
+				if (dl.includes(tl[i])) {top /= tl[i]; down /= tl[i]; break;}
+			}
+			if (i <= 1) s = true; 
+			console.log(top+ ' '+ down + ' '+ i)
+		}
+}
+	</script>
+</body>

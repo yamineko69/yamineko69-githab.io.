@@ -1,0 +1,23 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<input type="number" id ="n1">
+			<script type="text/javascript">
+		function myfunc(){
+		var v1 = Math.abs(document.getElementById('n1').value);
+		var re = true;
+		for (var i = v1-1; i > 1; i--)
+		{
+			if (v1%i == 0){
+				re = false
+			}
+		}
+		document.write(re);
+		}
+	</script>
+	<button onclick="myfunc()">check</button>
+		<br>
+	<a href="JS\index.html"> <img src="button.png"></a>
+	<br>
+</body>

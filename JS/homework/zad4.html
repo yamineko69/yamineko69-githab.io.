@@ -1,0 +1,28 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<input type="number" id ="n1">
+	<button onclick="myfunc()">check</button>
+
+			<script type="text/javascript">
+		function myfunc(){
+		var v1 = document.getElementById('n1').value;
+		var ar = [], re = [];
+		var i,j,k=0;
+
+for (i = 2; k<v1; i++){
+	if (ar.includes(i) == false) {
+		re.push(i);
+		for (j = 0; j < v1+1; j+=i){
+				ar.push(j);
+			}
+		k++;
+		console.log(k)
+		}
+	}
+		document.write(re);
+}
+
+	</script>
+</body>

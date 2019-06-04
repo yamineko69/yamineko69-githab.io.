@@ -1,0 +1,33 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<input type="number" id ="n1">
+	<button onclick="myfunc()">check</button>
+
+			<script type="text/javascript">
+function myfunc(){
+function getsum(v1){
+		var i,j,k=0,s=0;
+q = Math.ceil((v1**(1/2)));
+for (i = 2; i<q; i++){
+		if (v1 % i == 0)  {
+			s+=i;
+			if ((v1 / i) > q) {s+=v1/i
+			};
+		}
+		}
+	if (v1 % i == 0)  s+=i;
+return s + 1;
+}
+		var v1 = document.getElementById('n1').value;
+var i=0,j=0;
+while (i<v1){
+j+=1;
+var n = getsum(j);
+if (j == n) {i+=1; document.write(j);document.write('   ');}
+}
+}
+
+	</script>
+</body>

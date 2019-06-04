@@ -1,0 +1,46 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<input type="number" id ="n1">
+	<input type="number" id ="n2">
+	<button onclick="myfunc()">check</button>
+
+			<script type="text/javascript">
+function myfunc(){
+		function getsimple(v1){
+		var ar = [], re = [];
+		var i,j;
+
+for (i = 2; i<v1; i++){
+	if (ar.includes(i) == false) {
+		re.push(i);
+		for (j = 0; j < v1+1; j+=i){
+				ar.push(j);
+			}
+		}
+	}
+		return re
+}
+
+		var v1 = document.getElementById('n1').value;
+		var v2 = document.getElementById('n2').value;
+var q;
+var re = getsimple(v2);
+let qwe = new Set();
+for (i in re){
+for (j in re){
+for (k in re){
+var q = (+i)+(+j)+(+k);
+if ((q>v1) && (q<v2) && (q%2 == 1)) qwe.add(q);
+}
+}
+}
+for (let value of qwe) {
+  document.write(value + ' ');
+}
+}
+
+
+	</script>
+</body>

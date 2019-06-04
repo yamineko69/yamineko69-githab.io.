@@ -1,0 +1,22 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<input type="number" id ="n1">
+	<button onclick="myfunc()">check</button>
+
+			<script type="text/javascript">
+		function myfunc(){
+		var v1 = document.getElementById('n1').value;
+		var s1=1, s0=0 ,k;
+while (s1<v1)
+{
+k = s1;
+s1 += s0;
+s0 = k;
+document.write(s1 + ' ');
+}
+if (s1 == v1) {document.write('YES');} else {document.write('NO') ;}
+}
+	</script>
+</body>

@@ -1,0 +1,21 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<input type="number" id ="n1">
+	<input type="number" id ="n2">
+	<button onclick="myfunc()">check</button>
+
+			<script type="text/javascript">
+		function myfunc(){
+		var v1 = document.getElementById('n1').value;
+		var v2 = document.getElementById('n2').value;
+for (var i = v1; i <= v2 ; i ++) {
+		var q = 0;
+for (var j of i.toString(10)){q += +j}
+if (i % q == 0) document.write(i + ' ');
+console.log(q)
+}
+}
+	</script>
+</body>

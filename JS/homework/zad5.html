@@ -1,0 +1,28 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<input type="number" id ="n1">
+	<button onclick="myfunc()">check</button>
+
+			<script type="text/javascript">
+		function myfunc(){
+		var v1 = document.getElementById('n1').value;
+		var ar = [], re = [];
+		var i,j,k=0;
+q = Math.ceil((v1**(1/2)));
+for (i = 2; i<q; i++){
+		if (v1 % i == 0)  {
+			re.push(i);
+			if ((v1 / i) > q) {re.push(v1/i)
+			};
+		}
+		}
+	if (v1 % i == 0)  re.push(i);
+		re = re.sort(function(a,b){return a-b});
+		document.write(re);
+
+}
+
+	</script>
+</body>

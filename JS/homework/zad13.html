@@ -1,0 +1,41 @@
+<!Doctype HTML>
+<head>
+</head>
+<body>
+	<input type="number" id ="n1">
+	<input type="number" id ="n2">
+	<button onclick="myfunc()">check</button>
+
+			<script type="text/javascript">
+		function myfunc(){
+			function delit(v1){
+				var re = [];
+				var i,j;
+				q = Math.ceil((v1**(1/2)));
+				for (i = 2; i<q; i++){
+					if (v1 % i == 0)  {
+						re.push(i);
+						if ((v1 / i) > q) {re.push(v1/i)
+						};
+					}
+					}
+				if (v1 % i == 0)  re.push(i);
+				re.push(1);
+				re.push(+v1);
+					re = re.sort(function(a,b){return a-b});
+					return re;
+			}
+
+
+
+		var v1 = document.getElementById('n1').value;
+		var v2 = document.getElementById('n2').value;
+for (var i = v1; i <= v2 ; i ++) {
+		var del = delit(i);
+		q = true;
+for (var j of i.toString(10)){if (!(del.includes(+j))){q = false; break;}}
+if (q) document.write(i + ' ');
+}
+}
+	</script>
+</body>
